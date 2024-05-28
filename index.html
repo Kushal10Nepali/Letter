@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+</head>
+<body>
+    <div class="paper">
+        <div class="lines">
+          <div class="text" contenteditable spellcheck="false">
+            Dear AngryBird🐧❤️<br /><br />
+            I hope this letter finds you well. I want to apologize for my actions when we spoke last. I know I messed up again, and I deeply regret causing you more  frustration. I understand why you have blocked me, and I respect your decision.
+            <br /><br />
+            I wish I could go back and handle things differently, tara I can't. All I can do is apologize ani hope that, in time, you can  forgive me. Please know that I am truly sorry for any hurt I've caused.
+            <br /><br />
+            I know things are getting even worse. Relationship hamro ho bachauneni hamleh nai parcha. I know galti ta vachha mero tara i also get hurt. Rush maa decision liney haina .  
+            Ekdamai dherai sorry feri pani 😔<br /><br />
+            Dherai Maya🌻❤️
+          </div>
+        <div class="holes hole-top"></div>
+        <div class="holes hole-middle"></div>
+        <div class="holes hole-bottom"></div>
+      </div>
+</body>
+<script>
+    function revealText() {
+        var textElement = document.querySelector('.text');
+        var text = textElement.innerHTML;
+        var revealedText = '';
+        var index = 0;
+        var interval = setInterval(function() {
+            if (index < text.length) {
+                revealedText += text[index];
+                textElement.innerHTML = revealedText;
+                index++;
+                if (text[index - 1] === '<') {
+                    while (text[index] !== '>') {
+                        revealedText += text[index];
+                        textElement.innerHTML = revealedText;
+                        index++;
+                    }
+                    revealedText += text[index];
+                    textElement.innerHTML = revealedText;
+                    index++;
+                }
+            } else {
+                clearInterval(interval);
+            }
+        }, 50); // Adjust the interval (milliseconds) as needed
+    }
+
+    window.onload = function() {
+        revealText();
+    };
+</script>
+
+<!-- <script>
+    function revealText() {
+        var textElement = document.querySelector('.text');
+        var text = textElement.textContent.trim();
+        var revealedText = '';
+        var index = 0;
+        var interval = setInterval(function() {
+            if (index < text.length) {
+                revealedText += text[index];
+                textElement.innerHTML = revealedText;
+                index++;
+            } else {
+                clearInterval(interval);
+            }
+        }, 50); // Adjust the interval (milliseconds) as needed
+    }
+
+    window.onload = function() {
+        revealText();
+    };
+</script> -->
+</html>
+
+
